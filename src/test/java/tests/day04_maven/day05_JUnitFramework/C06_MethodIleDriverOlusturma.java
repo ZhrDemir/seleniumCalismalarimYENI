@@ -19,22 +19,73 @@ public class C06_MethodIleDriverOlusturma {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
     @Test
-    public void wisequarterTest(){
+    public void wisequarterTest() {
 
         setup();
 
-     driver.get("https://www.wisequarter.com");
+        driver.get("https://www.wisequarter.com");
 
         // title ın "Wise" içerdiğini test edin
 
         String expectedTitle = "Wise";
         String actualTitle = driver.getTitle();
-        if (actualTitle.contains(expectedTitle)){
+        if (actualTitle.contains(expectedTitle)) {
             System.out.println("Wise testi passed");
-        }else System.out.println("Wise testi failed");
+        } else System.out.println("Wise testi failed");
 
         ReusableMethod.bekle(5);
         driver.quit();
+    }
+        @Test
+        public void googleTest(){
+            setup();
+
+
+            //  google.com a gidin
+
+            driver.get("https://www.google.com");
+
+
+
+            // url ın "google" içerdiğini test edin
+
+            String expectedUrl = "google";
+            String actualUrl = driver.getCurrentUrl();
+            if (actualUrl.contains(expectedUrl)){
+                System.out.println("Google testi passed");
+            }else System.out.println("Google testi failed");
+
+            ReusableMethod.bekle(5);
+            driver.quit();
+
+
+
+
+
+        }
+        @Test
+        public void testOtomasyonuTest(){
+            setup();
+
+            //testotomasyonu.com a gidin
+            driver.get("https://www.testotomasyonu.com");
+
+            // title ın "Test Otomasyon" içerdiğini test edin
+
+            String expectedTitle = "Test Otomasyon";
+            String actualTitle = driver.getTitle();
+            if (actualTitle.contains(expectedTitle)){
+                System.out.println("Test Otomasyon testi passed");
+            }else System.out.println("Test Otomasyon testi failed");
+
+            ReusableMethod.bekle(5);
+            driver.quit();
+
+        }
+
+
+
+
 
     }
 
@@ -43,4 +94,5 @@ public class C06_MethodIleDriverOlusturma {
 
 
 
-}
+
+

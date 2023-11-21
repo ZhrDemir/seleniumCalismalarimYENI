@@ -13,8 +13,6 @@ public class C05_TestNotasyonu {
     @Test
         public void testOtomasyonuTest(){
         WebDriverManager.chromedriver().setup();
-
-
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
