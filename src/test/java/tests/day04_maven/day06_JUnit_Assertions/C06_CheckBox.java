@@ -1,4 +1,4 @@
-package day06_JUnit_Assertions;
+package tests.day04_maven.day06_JUnit_Assertions;
 
 
 
@@ -13,7 +13,6 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import Utilitlies.ReusableMethod;
 
 import java.time.Duration;
 
@@ -41,19 +40,25 @@ import java.time.Duration;
             //	     https://testotomasyonu.com/form
             driver.get("https://testotomasyonu.com/form");
             //	b. Sirt Agrisi ve Carpinti checkbox’larini secin
-            WebElement sirtAgrisiCheckBox = driver.findElement(By.id("gridCheck5"));
-            sirtAgrisiCheckBox.click();
+           WebElement sirtAgrisiCheckBox = driver.findElement(By.id("gridCheck5"));
+            WebElement sirtYaziElementi = driver.findElement(By.xpath("//*[@for='gridCheck5']"));
+
+
+           sirtAgrisiCheckBox.sendKeys(Keys.SPACE);
+           sirtAgrisiCheckBox.sendKeys(Keys.PAGE_DOWN);
+            //sirtYaziElementi.;
+
 
             WebElement carpintiCheckBox = driver.findElement(By.id("gridCheck4"));
-            WebElement carpintiYaziElementi = driver.findElement(By.xpath("//*[@for='gridCheck4']"));
-            carpintiYaziElementi.click();
 
+            carpintiCheckBox.sendKeys(Keys.SPACE);
+            ReusableMethod.bekle(2);
             //	c. Sirt Agrisi ve Carpinti checkbox’larininin seçili
             //  	olduğunu test edin
             Assert.assertTrue(sirtAgrisiCheckBox.isSelected());
             Assert.assertTrue(carpintiCheckBox.isSelected());
 
-            carpintiCheckBox.sendKeys(Keys.PAGE_DOWN);
+           // carpintiCheckBox.sendKeys(Keys.PAGE_DOWN);
             ReusableMethod.bekle(3);
             //	d. Seker ve Epilepsi checkbox’larininin seçili
             //  	olmadigini test edin

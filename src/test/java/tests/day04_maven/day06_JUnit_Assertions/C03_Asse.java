@@ -1,4 +1,4 @@
-package day06_JUnit_Assertions;
+package tests.day04_maven.day06_JUnit_Assertions;
 
 import org.junit.Assert;
 import org.junit.Test;

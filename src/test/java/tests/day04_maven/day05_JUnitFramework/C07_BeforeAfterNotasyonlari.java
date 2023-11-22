@@ -1,9 +1,7 @@
 package tests.day04_maven.day05_JUnitFramework;
 
-import Utilitlies.ReusableMethod;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import junit.framework.AssertionFailedError;
-import org.checkerframework.checker.units.qual.A;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

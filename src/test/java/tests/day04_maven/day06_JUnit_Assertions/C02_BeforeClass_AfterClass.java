@@ -1,6 +1,5 @@
-package day06_JUnit_Assertions;
+package tests.day04_maven.day06_JUnit_Assertions;
 
-import Utilitlies.ReusableMethod;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import junit.framework.AssertionFailedError;
 import org.junit.AfterClass;
