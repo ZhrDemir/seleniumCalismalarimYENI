@@ -1,7 +1,6 @@
-package tests.day04_maven.day06_JUnit_Assertions;
+package test.day04_maven.day06_JUnit_Assertions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.checkerframework.checker.units.qual.C;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;

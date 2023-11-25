@@ -1,16 +1,12 @@
-package tests.day04_maven.day07_testBaseClass_Dropdown;
+package test.day04_maven.day07_testBaseClass_Dropdown;
 
 import Utilitlies.ReusableMethod;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.checkerframework.checker.units.qual.A;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
@@ -19,6 +15,12 @@ public class C01_RadioButton{
   //  Gerekli yapiyi olusturun ve aşağıdaki görevi tamamlayın.
 
     WebDriver driver;
+
+
+
+
+
+
 
     @Before
     public void setup(){
@@ -57,18 +59,37 @@ public class C01_RadioButton{
     }
     @Test
     public void radioButtonYaziTesti(){
+
+
+
+
         //  a. Verilen web sayfasına gidin.
         //  https://testotomasyonu.com/form
         driver.get("https://testotomasyonu.com/form");
 
+        WebElement radioButton = driver.findElement(By.xpath("//*[@id=\"inlineRadio1\"]"));
+
+
+
         //  b. Cinsiyet Radio button elementlerini locate edin ve radio button yazidan
         //  size uygun olani secin
 
-      driver.findElement(By.xpath("//*[@class='container form-container']")).sendKeys(Keys.PAGE_DOWN);
-        ReusableMethod.bekle(10);
-        WebElement kadinRadioYazi = driver.findElement(By.xpath("//label[text()='Kadın']"));
-        //kadinRadioYazi.sendKeys(Keys.PAGE_DOWN);
-        kadinRadioYazi.click();
+
+        ReusableMethod.bekle(4);
+
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);",radioButton);
+        js.executeScript("arguments[0].click();",radioButton);
+
+        ReusableMethod.bekle(3);
+        // SORUN!!!!!!
+        // GÖRMÜYOR KADIN BUTONUNU O YÜZDEN İŞARETLEYEMİYOR
+        // YUKARIDA PAGEDOWN YAPAYIM DEDİM ONU DA YAPMIYOR
+        // SAYFA AYARLARIM KOCAMAN OLUYOR SIKINTI ÇIKIYOR ÇOĞU ZAMAN CLİCKLERDE
+
+
+
 
         WebElement kadinRadioButton = driver.findElement(By.id("inlineRadio1"));
         WebElement erkekRadioButton = driver.findElement(By.id("inlineRadio2"));

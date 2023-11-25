@@ -1,4 +1,4 @@
-package tests.day04_maven;
+package test.day04_maven;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

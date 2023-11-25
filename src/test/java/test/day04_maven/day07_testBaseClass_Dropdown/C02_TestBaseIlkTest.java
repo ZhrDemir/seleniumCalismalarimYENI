@@ -1,4 +1,4 @@
-package tests.day04_maven.day07_testBaseClass_Dropdown;
+package test.day04_maven.day07_testBaseClass_Dropdown;
 
 import Utilitlies.ReusableMethod;
 import Utilitlies.TestBase;
