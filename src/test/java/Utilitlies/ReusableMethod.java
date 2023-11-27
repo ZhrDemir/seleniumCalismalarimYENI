@@ -1,9 +1,11 @@
 package Utilitlies;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class ReusableMethod {
 
@@ -27,4 +29,34 @@ public class ReusableMethod {
         }
 
     }
+    public static WebDriver titleIleSayfaDegistir(WebDriver driver , String hedefSayfaTitle){
+
+        Set<String> tumWhdSeti = driver.getWindowHandles();
+
+        for (String each : tumWhdSeti
+        ) {
+
+            String eachTitle = driver.switchTo().window(each).getTitle();
+            if (eachTitle.equals(hedefSayfaTitle)){
+                return driver;
+            }
+        }
+
+        return driver;
+    }
+    public static String ilkSayfaWhdIleIkinciSayfaWhdBul(WebDriver driver, String ilkSayfaWhd) {
+
+        Set<String > tumWhdSeti = driver.getWindowHandles();
+
+        tumWhdSeti.remove(ilkSayfaWhd);
+
+        for (String each:tumWhdSeti
+        ) {
+            return each;
+        }
+
+        return null; // bu satirin hic calismayacagini biliyoruz
+        // sadece javanin endiselerini gidermek icin yazdik
+    }
+
 }

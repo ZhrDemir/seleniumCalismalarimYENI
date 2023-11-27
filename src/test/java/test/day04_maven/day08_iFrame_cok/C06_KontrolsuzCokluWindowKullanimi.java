@@ -6,6 +6,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WindowType;
 
 import java.util.Set;
 
@@ -87,5 +88,8 @@ public class C06_KontrolsuzCokluWindowKullanimi extends TestBase {
         System.out.println(wHDSeti);
 
         ReusableMethod.bekle(3);
+
+
+
     }
 }
